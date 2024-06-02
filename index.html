@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قنوات تلفزيونية</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+    }
+        .fullscreen-iframe {
+            width: 100vw;
+            height: calc(100vw * 9 / 16); /* الارتفاع = العرض * نسبة العرض إلى الارتفاع لمقاطع الفيديو (16:9) */
+            max-width: 100%;
+            max-height: 50vh;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+  .channel-list a {
+            display: block;
+            padding: 15px;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: #444;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+  .channel-list a:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+  #searchInput {
+            width: calc(100% - 40px); /* عرض الجدول - الهامش */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        #searchInput:focus {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-color: #888;
+        }
+        input[type="text"] {
+            margin: 5px 0;
+            padding: 8px;
+            width: calc(100% - 16px);
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+       .button-group button {
+         flex: 1;
+         margin: 1px 5px;
+         padding: 5px 15px;
+         cursor: pointer;
+         border-radius: 10px; /* تعديل حجم الزاوية حسب الرغبة */
+}
+    </style>
+</head>
+<body>
 
+    <div class="fullscreen-iframe" id="videoFrame">
+        <iframe name="iframe" src="https://www.youtube.com/embed/moQtMet7F7w?si=xFITmG9neRW3vOTy" allowfullscreen></iframe>
+    </div>
+
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="ابحث عن القناة...">      <div class="channel-list" id="channelList">
+           <a href="https://www.youtube.com/embed/moQtMet7F7w?si=xFITmG9neRW3vOTy" target="iframe" onclick="scrollToIframe(event)">قناة القرآن الكريم</a>
+            <a href="https://www.youtube.com/embed/Kt7hKHlArl8?si=e33BL-LS6qGdoN1H" target="iframe" onclick="scrollToIframe(event)">قناة السنة</a>
+            <a href="https://www.youtube.com/embed/bNyUyrR0PHo?si=WDZxmrSVYJd5DXVG" target="iframe" onclick="scrollToIframe(event)">قناة الجزيرة</a>
+            <a href="https://www.youtube.com/embed/me1fBxx9wJY?si=cCw5mUQgYPhJy1ha" target="iframe" onclick="scrollToIframe(event)">قناة اسكاي نيوز</a>
+            <a href="https://www.youtube.com/embed/bCgJhh5qoog?si=glQHR7vFelWH09FJ" target="iframe" onclick="scrollToIframe(event)">قناة العربية</a>
+            <a href="https://www.youtube.com/embed/et0bSUddkn4?si=GH4sNzZEQSdun6IO" target="iframe" onclick="scrollToIframe(event)">قناة الحدث</a>
+            <a href="https://www.youtube.com/embed/qhMnaWUXApc?si=HyoTUg86S_edXhTf" target="iframe" onclick="scrollToIframe(event)">TRT عربي</a>
+            <a href="https://www.youtube.com/embed/lig945CnE2U?si=Om9rNGFDjwLgSUMO" target="iframe" onclick="scrollToIframe(event)">قناة المجد</a>
+            <a href="https://www.youtube.com/embed/6smlpd2BS5k?si=Cf9tJgtR58EWJrwn" target="iframe" onclick="scrollToIframe(event)">BBC عربي</a>
+            <a href="https://www.youtube.com/embed/VxWSGagPx98?si=8GHhza1eVNiTW_cJ" target="iframe" onclick="scrollToIframe(event)">كرتون نتورك</a>
+            <a href="https://www.youtube.com/embed/iU8gBtBRYWU?si=Wg8yCmwcsNKe1tfu" target="iframe" onclick="scrollToIframe(event)">النيل الاخبارية</a>
+            <a href="https://www.youtube.com/embed/VuYzy8IuT0Y?si=xmc9veP25-7AAg5F" target="iframe" onclick="scrollToIframe(event)">قناة 24 فرنس</a>
+            <a href="https://www.youtube.com/embed/TiPYdMXt_XI?si=ccFkEZquFFB1Gx1a" target="iframe" onclick="scrollToIframe(event)">قناة الجزيرة الوثائقية</a>
+            <a href="https://www.youtube.com/embed/FlzMedKfQOs?si=2zQPprdec0cxiBhp&amp;controls=0" target="iframe" onclick="scrollToIframe(event)">لشرق الوثائقية</a>
+            <a href="https://www.youtube.com/embed/BJ3Yv572V1A?si=-DHVI1NbLFCM6fao" target="iframe" onclick="scrollToIframe(event)">قناة ناشيونال جيوغرافيك</a>
+            <a href="https://www.youtube.com/embed/mVhb_Qnc1ME?si=rCU_KDBuVnG0JSKA" target="iframe" onclick="scrollToIframe(event)">قناة DW</a>
+            <a href="https://www.youtube.com/embed/mn4DlkkqfAo?si=tzzRWYTawF4Ssgi8" target="iframe" onclick="scrollToIframe(event)">قناة الإخبارية السعودية</a>
+            <a href="https://www.youtube-nocookie.com/embed/QoY06xa2vII?si=9ws1rsoPQstvvNfR" target="iframe" onclick="scrollToIframe(event)">قناة بالقيس</a>
+            <a href="https://www.youtube.com/embed/GHChHSuPfT4?si=6rN7QsnaoY8RZkxN" target="iframe" onclick="scrollToIframe(event)">الحرة العراقية</a>
+            <a href="https://www.youtube.com/embed/e2RgSa1Wt5o?si=K7LBE9boN6GWULv0" target="iframe" onclick="scrollToIframe(event)">قناة العربي</a>
+            <a href="https://arabic.rt.com/live/rt-player" target="iframe" onclick="scrollToIframe(event)">روسيا اليوم</a>
+            <a href="https://www.youtube.com/embed/1lfZqksTVOU?si=Xk6joD8EaWwVwPJx" target="iframe" onclick="scrollToIframe(event)">طبيعة مباشر</a>
+            <a href="https://www.youtube.com/embed/UV0mhY2Dxr0?si=QPanVcdmlP2ib99X" target="iframe" onclick="scrollToIframe(event)">طبيعة مباشر</a>
+            <a href="https://www.youtube.com/embed/-527PXkCtZw?si=9o-Wne5_kE_kQ9BE" target="iframe" onclick="scrollToIframe(event)">الصين العربية cctv</a>
+            <a href="https://www.youtube.com/embed/0fnkA5YEglU?si=6aDVDrU-KuQSIy1P" target="iframe" onclick="scrollToIframe(event)">مذكرة مسافر</a>
+            <a href="https://www.youtube.com/embed/BqysbaH4pxI?si=tdGa7kZj2RaWb4cq" target="iframe" onclick="scrollToIframe(event)">مذكرة مسافر</a>
+           </div>
+
+        <div>
+            <input type="text" id="channelName" placeholder="اسم القناة">
+            <input type="text" id="channelLink" placeholder="رابط القناة">
+            <div class="button-group">
+                <button onclick="addChannel()">إضافة قناة</button>
+                <button onclick="saveToFile()">حفظ</button>
+                <button onclick="loadFromFile()">استرجاع البيانات</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span class="programmer">برمجة حسين العرياني</span>
+    </footer>
+
+    <script>
+        function scrollToIframe(event) {
+            event.preventDefault();
+            const iframe = document.querySelector("iframe[name='iframe']");
+            iframe.src = event.currentTarget.href;
+            document.getElementById('videoFrame').scrollIntoView();
+        }
+
+        function addChannel() {
+            const name = document.getElementById('channelName').value;
+            const link = document.getElementById('channelLink').value;
+            if (name && link) {
+                const channelList = document.getElementById('channelList');
+                const a = document.createElement('a');
+                a.href = link;
+                a.target = 'iframe';
+                a.textContent = name;
+                a.onclick = scrollToIframe;
+                channelList.appendChild(a);
+                // تفريغ حقول الإضافة
+                document.getElementById('channelName').value = '';
+                document.getElementById('channelLink').value = '';
+            }
+        }
+
+        function saveToFile() {
+            const channels = document.querySelectorAll('#channelList a');
+            let xmlContent = '<?xml version="1.0" encoding="UTF-8"?>\n<channels>\n';
+            channels.forEach(channel => {
+                xmlContent += `  <channel>\n    <name>${channel.textContent}</name>\n    <link>${channel.href}</link>\n  </channel>\n`;
+            });
+            xmlContent += '</channels>';
+            const blob = new Blob([xmlContent], { type: 'application/xml' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'channels.xml';
+            a.click();
+        }
+
+        function loadFromFile() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'application/xml';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(reader.result, 'application/xml');
+                    const channels = xmlDoc.getElementsByTagName('channel');
+                    const channelList = document.getElementById('channelList');
+                    channelList.innerHTML = '';
+                    for (let channel of channels) {
+                        const name = channel.getElementsByTagName('name')[0].textContent;
+                        const link = channel.getElementsByTagName('link')[0].textContent;
+                        const a = document.createElement('a');
+                        a.href = link;
+                        a.target = 'iframe';
+                        a.textContent = name;
+                        a.onclick = scrollToIframe;
+                        channelList.appendChild(a);
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+const searchInput = document.getElementById('searchInput');
+        const channelList = document.getElementById('channelList').getElementsByTagName('a');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+
+            for (const channel of channelList) {
+                const channelName = channel.textContent.trim().toLowerCase();
+                if (channelName.includes(searchTerm)) {
+                    channel.style.display = 'block';
+                } else {
+                    channel.style.display = 'none';
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>
